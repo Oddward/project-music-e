@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'PoppinsBlack';
+    src: url('../fonts/Poppins-Black.ttf');
+}
+@font-face {
+    font-family: 'PoppinsLight';
+    src: url('../fonts/Poppins-Light.ttf');
+}
+:root {
+    --display-font: 'PoppinsBlack';
+    --subdisplay-font: 'PoppinsLight';
+}
+body {
+    overflow:hidden;
+}
+button {
+    /* border: none; */
+    padding: .5rem;
+}
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 10;
+    padding: .5rem;
+    -webkit-app-region:drag;
+    user-select: none;
+    -webkit-user-select:none;
+}
+h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+#close-button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: lightcoral;
+    margin-inline-start: .5rem;
+}
+.container {
+    height: 100vh;
+    color: #333;
+    fill: #333;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #eee;
+}
+#track-name {
+    font-family: var(--display-font), "Segoe UI", sans-serif;
+    font-size: calc(1.5rem + 2vw);
+    line-height: .9;
+    text-transform: uppercase;
+}
+#artist-name {
+    font-family: var(--subdisplay-font), sans-serif;
+    font-size: calc(1.5rem + 2vw);
+    line-height: .9;
+}
+#cover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15%;
+}
+#cover-art {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 3%;
+    box-shadow: none;
+    transition: all 300ms ease-in-out;
+    background: darkslategrey;
+}
+#cover-art.playing {
+    box-shadow: 0 4 20 #33333330;
+    transform: scale(1.05);
+    transform: translateY(2%);
+}
+#status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* align-content: center; */
+    padding: 15% 15% 15% 0;
+}
+.full-controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* .full-controls button {
+    padding: 0;
+    margin-inline-start: .5rem;
+    margin-inline-end: .5rem;
+} */

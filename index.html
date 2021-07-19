@@ -12,14 +12,46 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./dist/renderer.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
+    
+    <nav>
+      <button id="close-button">X</button>
+    </nav>
+    <div class="container">
+
+        <div id="cover-container">
+            <img src="" alt="Cover art of current track" id="cover-art">
+        </div>
+
+        <div id="status-container">
+            <div class="header">
+                <h1 id="track-name">Track name</h1>
+                <h2 id="artist-name">Artist Name</h2>
+            </div>
+
+            <audio src="src/media/GOMD Video - J. Cole.mp3" controls preload="metadata" id="current-audio">
+                error showing player
+                <!-- <source src="D:\resources\GOMD Video - J. Cole.mp3" type="audio/mpeg"> -->
+            </audio>
+
+            <div class="full-controls">
+                <button>Start</button>
+                <button id="prev-butt">Prev</button>
+                <button id="play-pause-butt">Play</button>
+                <button id="next-butt">Next</button>
+                <button>End</button>
+            </div>
+        </div>
+
+    </div>
 
     <!-- You can also require other files to run in this process -->
-    <script src="./dist/renderer.js"></script>
+    <!-- <script src="./dist/exports-fix.js"></script> -->
+    <!-- <script src="./dist/renderer.js"></script> -->
+    <!-- <script> require(path.join(__dirname, "./dist/renderer.js")); </script> -->
   </body>
 </html>
