@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'PoppinsBlack';
+    src: url('../fonts/Poppins-Black.ttf');
+}
+@font-face {
+    font-family: 'PoppinsLight';
+    src: url('../fonts/Poppins-LightItalic.ttf');
+}
+:root {
+    --display-font: 'PoppinsBlack';
+    --subdisplay-font: 'PoppinsLight';
+    --color-accent: #333;
+}
+body {
+    overflow:hidden;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    /* padding-bottom: 1rem; */
+}
+button {
+    /* border: none; */
+    padding: .5rem;
+    border: none;
+}
+button:hover {
+    background-color: #8444;
+    /* color: #eee; */
+}
+nav {
+    grid-area: nav;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+    color: #333;
+    fill: #333;
+    font-size: .8rem;
+    line-height: .8rem;
+    letter-spacing: .2rem;
+    user-select: none;
+}
+#window-controls, #window-title-bar { display: inline-block; }
+
+#window-controls button { padding: .5rem 1rem; }
+
+#close-button { color: lightcoral; }
+
+#close-button:hover {
+    background-color: coral;
+    color: white;
+}
+#window-title-bar {
+    -webkit-app-region:drag;
+    padding: .5rem;
+    font-family: var(--display-font);
+    margin-inline-end: auto;
+    color: #444;
+    letter-spacing: .5em;
+}
+#window-title-bar span {
+    font-family: var(--subdisplay-font);
+}
+h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+/* h2 { font-style: italic; } */
+
+.container {
+    height: 100vh;
+    color: #333;
+    fill: #333;
+    display: grid;
+    grid-template: 
+        'nav nav nav'
+        'art track track'
+        'controls controls controls'
+        'foot foot foot'
+        / 2fr 3fr;
+    background-color: #eee;
+}
+.track-name {
+    font-family: var(--display-font), "Segoe UI", sans-serif;
+    font-size: calc(1.5rem + 2vw);
+    line-height: .9;
+    text-transform: uppercase;
+}
+.artist-name {
+    font-family: var(--subdisplay-font), sans-serif;
+    font-size: calc(1.5rem + 2vw);
+    line-height: .9;
+    color: var(--color-accent);
+}
+#cover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vmin 5vmin 10vmin 10vmin;
+    grid-area: art;
+}
+.cover-art {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 3%;
+    box-shadow: none;
+    transition: all 600ms ease-in-out;
+    background: darkslategrey;
+}
+.cover-art.playing {
+    box-shadow: 0 4px 20px #2b2b2b30;
+    transform: scale(1.1);
+    transform: translateY(-2%);
+}
+#status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* align-content: center; */
+    padding: 15vmin 15vmin 15vmin 0;
+    grid-area: track;
+}
+#status-container .header { letter-spacing: .3em; }
+/* If #waveform width is not specified it's initialized to 0 & waveform remains width 0 */
+#waveform { width: 100%; }
+
+/* CONTROLS */
+.full-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    grid-area: controls;
+}
+.playback-butts {
+    display: flex;
+    justify-content: center;
+}
+.playback-butts button {
+    padding: .5rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 1.5rem;
+}
+.seek-progress-bar {
+    width: 100%;
+}
+.seekbar {
+    width: 100%;
+    height: 6px;
+    /* display: inline-block; */
+    -webkit-appearance: media-sliderthumb;
+    margin: 1.5rem;
+    background-color: var(--color-accent);
+    stroke: #444;
+    box-shadow: 0 2px 6px #2444;
+    transition: all 300ms ease;
+}
+.seekbar::-webkit-slider-thumb {
+    background: #eee;
+    border: 2px solid #444;
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+}
+.seekbar::-webkit-slider-thumb:focus { background: white; }
+
+.duration {
+    background-color: white;
+    font-size: .8rem;
+    padding: .2rem;
+    border-radius: .2rem;
+    float: right;
+}
+/* FOOTER */
+.app-footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #222;
+    color: #eee;
+    width: 100%;
+    padding: .2rem;
+}
+
+/* INPUT */
+#audio-file {
+    height: 50px;
+    width: 100%;
+    opacity: .5;
+}

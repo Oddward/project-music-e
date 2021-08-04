@@ -1,22 +1,27 @@
 {
-  "name": "electron-quick-start",
+  "name": "project-music-e",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A simple & slick audio player",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/Oddward/project-music-e",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "audio",
+    "music",
+    "player",
+    "media",
+    "visualization"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Mugtaba G",
+  "license": "ISC",
   "devDependencies": {
     "electron": "^13.1.6"
+  },
+  "dependencies": {
+    "music-metadata": "^7.11.1",
+    "wavesurfer.js": "^5.1.0"
   }
 }
