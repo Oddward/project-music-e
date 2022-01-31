@@ -21,7 +21,7 @@
     "electron": "^13.1.6"
   },
   "dependencies": {
-    "music-metadata": "^7.11.1",
+    "music-metadata": "^7.11.8",
     "wavesurfer.js": "^5.1.0"
   }
 }
