@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "music-metadata": "^7.11.1",
-    "wavesurfer.js": "^5.1.0"
+    "wavesurfer.js": "^6.0.3"
   }
 }
